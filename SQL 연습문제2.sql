@@ -13,7 +13,7 @@ CREATE TABLE `bank_customer` (
 	`c_no`		CHAR(14) PRIMARY KEY,
 	`c_name`		VARCHAR(20) NOT NULL,
 	`c_dist`		TINYINT NOT NULL DEFAULT 0,
-	`c_phone`	VARCHAR(20) NOT NULL,
+	`c_phone`	VARCHAR(20) UNIQUE NOT NULL,
 	`c_addr`		VARCHAR(100)
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE `bank_account` (
 	`a_item_dist`	CHAR(2) NOT NULL,
 	`a_item_name`	VARCHAR(20) NOT NULL,
 	`a_c_no`			CHAR(14) NOT NULL,
-	`a_balance`		INT NOT NULL,
+	`a_balance`		INT NOT NULL DEFAULT 0,
 	`a_open_date`	DATE NOT NULL
 );
 
